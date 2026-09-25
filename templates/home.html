@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My personal AI</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+
+        <hi>Your personal AI</hi>
+        <p>
+            just try out our AI, what harm will it cause you 🤨🤨
+        </p>
+        <form method="POST" action="/ask">
+            <textarea
+            name="question"
+            placeholder="Ask your dumb question😒😒"
+            rows="5"
+            cols="38">
+
+            </textarea>
+
+            <br><br>
+
+            <button type="submit">Ask now😈💀</button>
+        </form>
+        {% if answer %}
+            <div class="chat">
+
+            <div class="user-message">
+                <strong>You</strong>
+                <p>{{ question }}</p>
+            </div>
+
+            <div class="ai-message">
+                <strong>AI Study Assistant</strong>
+                <p>{{ answer }}</p>
+            </div>
+
+            </div>
+        {% endif %}
+    </body>
+</html>
